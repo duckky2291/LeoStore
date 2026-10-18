@@ -1,0 +1,1528 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description"
+    content="Leo Maison - European Haute Couture & Sartorial Luxury Fashion. Handcrafted in Milan, Paris, and London using pure Loro Piana wool, Mongolian cashmere, and Lyon silks for true connoisseurs." />
+  <meta name="keywords"
+    content="luxury fashion, Leo Maison, sartorial suits, Italian cashmere, French silk, bespoke tailoring, haute couture, handmade derbies, Savile Row" />
+  <title>Leo Maison | Haute Couture & European Luxury Fashion</title>
+
+  <!-- Google Fonts: Playfair Display, Cormorant Garamond, Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Playfair+Display:ital,wght@0,500;0,600;0,700;0,800;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css" />
+
+  <!-- SVG Gradients Definition -->
+  <svg width="0" height="0" style="position: absolute;">
+    <defs>
+      <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" stop-color="#eed59b" />
+        <stop offset="50%" stop-color="#c5a059" />
+        <stop offset="100%" stop-color="#9a7531" />
+      </linearGradient>
+    </defs>
+  </svg>
+</head>
+
+<body>
+
+  <!-- ==========================================================================
+       Top Marquee Ticker
+       ========================================================================== -->
+  <div class="top-announcement">
+    <div class="marquee-content">
+      <div class="marquee-item">
+        <span>MILAN • PARIS • LONDON • NEW YORK</span>
+        <span class="marquee-dot"></span>
+        <span>FALL / WINTER 2026: <span class="highlight">HAUTE COUTURE RUNWAY</span></span>
+        <span class="marquee-dot"></span>
+        <span>COMPLIMENTARY WHITE-GLOVE VIP SHIPPING ON ORDERS OVER $500</span>
+        <span class="marquee-dot"></span>
+        <span>NEW PRIVÉ MEMBER PRIVILEGE: ENTER CODE <span class="highlight">LEOVIP10</span> FOR 10% OFF</span>
+        <span class="marquee-dot"></span>
+        <span>INTERNATIONAL PAYMENTS ACCEPTED: PAYPAL & VISA / MASTERCARD</span>
+      </div>
+      <!-- Duplicate for continuous infinite scroll -->
+      <div class="marquee-item">
+        <span>MILAN • PARIS • LONDON • NEW YORK</span>
+        <span class="marquee-dot"></span>
+        <span>FALL / WINTER 2026: <span class="highlight">HAUTE COUTURE RUNWAY</span></span>
+        <span class="marquee-dot"></span>
+        <span>COMPLIMENTARY WHITE-GLOVE VIP SHIPPING ON ORDERS OVER $500</span>
+        <span class="marquee-dot"></span>
+        <span>NEW PRIVÉ MEMBER PRIVILEGE: ENTER CODE <span class="highlight">LEOVIP10</span> FOR 10% OFF</span>
+        <span class="marquee-dot"></span>
+        <span>INTERNATIONAL PAYMENTS ACCEPTED: PAYPAL & VISA / MASTERCARD</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       Sticky Header Navigation
+       ========================================================================== -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- Mobile Menu Toggle Button -->
+      <button class="nav-toggle-btn" aria-label="Open Navigation Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <!-- Brand Identity & Crest -->
+      <a href="#" class="brand-logo" aria-label="Leo Maison - Haute Couture Luxury Fashion">
+        <img src="assets/logo-leo-maison.png" alt="Leo Maison - Haute Couture • Luxury Fashion • Bespoke"
+          class="brand-logo-img" />
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="desktop-nav">
+        <a href="#shop" class="nav-link active">Collections</a>
+        <a href="#shop" class="nav-link" onclick="document.querySelector('[data-category=men]').click()">Gentlemen</a>
+        <a href="#shop" class="nav-link" onclick="document.querySelector('[data-category=women]').click()">Ladies</a>
+        <a href="#shop" class="nav-link" onclick="document.querySelector('[data-category=accessories]').click()">Accessories</a>
+        <a href="#lookbook" class="nav-link">Lookbook</a>
+        <a href="#vip-club" class="nav-link">Leo Privé</a>
+      </nav>
+
+      <!-- Action Buttons -->
+      <div class="header-actions">
+        <!-- Currency Switcher -->
+        <button class="currency-switcher" id="currencyToggle" onclick="toggleCurrency()" title="Switch Currency">
+          $ USD
+        </button>
+
+        <!-- Search Icon -->
+        <button class="action-btn" onclick="openSearchOverlay()" aria-label="Search" title="Search Collections">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8" />
+            <line x1="21" y1="21" x2="16.65" y2="16.65" />
+          </svg>
+        </button>
+
+        <!-- Wishlist Icon -->
+        <button class="action-btn" onclick="openWishlistModal()" aria-label="Wishlist" title="Curated Wishlist">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path
+              d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+          </svg>
+          <span class="action-badge" id="wishlistBadge" style="display: none;">0</span>
+        </button>
+
+        <!-- Cart Icon -->
+        <button class="action-btn" onclick="openCartDrawer()" aria-label="Shopping Bag" title="Shopping Bag">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <path d="M16 10a4 4 0 0 1-8 0" />
+          </svg>
+          <span class="action-badge" id="cartBadge" style="display: none;">0</span>
+        </button>
+
+        <!-- User Profile / Auth Trigger -->
+        <div class="user-header-menu-wrap" id="userHeaderMenuWrap">
+          <!-- Rendered dynamically by app.js -->
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       Mobile Navigation Drawer
+       ========================================================================== -->
+  <div class="drawer-backdrop" id="mobileMenuBackdrop" onclick="closeMobileMenu()"></div>
+  <aside class="mobile-menu-drawer" id="mobileMenuDrawer" aria-label="Mobile Navigation Drawer">
+    <div class="mobile-menu-header">
+      <a href="#" class="brand-logo" onclick="closeMobileMenu()">
+        <img src="assets/logo-leo-maison.png" alt="Leo Maison" style="height: 38px; width: auto;" />
+      </a>
+      <button class="drawer-close-btn" onclick="closeMobileMenu()" aria-label="Close Menu">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile User Role Profile Section -->
+    <div id="mobileUserSection"
+      style="padding: 14px 20px; border-bottom: 1px solid var(--border-subtle); background: var(--bg-surface-elevated);">
+      <!-- Injected dynamically by app.js -->
+    </div>
+
+    <div class="mobile-menu-search">
+      <div class="mobile-search-box" onclick="closeMobileMenu(); openSearchOverlay();">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8" />
+          <line x1="21" y1="21" x2="16.65" y2="16.65" />
+        </svg>
+        <span>Search luxury collections, fabrics...</span>
+      </div>
+    </div>
+
+    <div class="mobile-menu-links">
+      <a href="#shop" class="mobile-nav-item" onclick="filterFromMobile('all')">
+        <span class="nav-item-icon">✨</span>
+        <span class="nav-item-text">All Masterpieces</span>
+        <span class="nav-item-arrow">›</span>
+      </a>
+      <a href="#shop" class="mobile-nav-item" onclick="filterFromMobile('men')">
+        <span class="nav-item-icon">🎩</span>
+        <span class="nav-item-text">Gentlemen's Sartorial</span>
+        <span class="nav-item-arrow">›</span>
+      </a>
+      <a href="#shop" class="mobile-nav-item" onclick="filterFromMobile('women')">
+        <span class="nav-item-icon">👗</span>
+        <span class="nav-item-text">Ladies' Haute Couture</span>
+        <span class="nav-item-arrow">›</span>
+      </a>
+      <a href="#shop" class="mobile-nav-item" onclick="filterFromMobile('accessories')">
+        <span class="nav-item-icon">🕶️</span>
+        <span class="nav-item-text">Leather Goods & Eyewear</span>
+        <span class="nav-item-arrow">›</span>
+      </a>
+      <a href="#shop" class="mobile-nav-item" onclick="filterFromMobile('runway')">
+        <span class="nav-item-icon">🏛️</span>
+        <span class="nav-item-text">Milan Runway Edition</span>
+        <span class="nav-item-arrow">›</span>
+      </a>
+      <a href="#shop" class="mobile-nav-item" onclick="filterFromMobile('autumn')">
+        <span class="nav-item-icon">🍂</span>
+        <span class="nav-item-text">Autumn/Winter Cashmere</span>
+        <span class="nav-item-arrow">›</span>
+      </a>
+      <a href="#lookbook" class="mobile-nav-item" onclick="closeMobileMenu()">
+        <span class="nav-item-icon">📷</span>
+        <span class="nav-item-text">Interactive Lookbook</span>
+        <span class="nav-item-arrow">›</span>
+      </a>
+      <a href="#vip-club" class="mobile-nav-item" onclick="closeMobileMenu()">
+        <span class="nav-item-icon">👑</span>
+        <span class="nav-item-text">Leo Privé VIP Circle</span>
+        <span class="nav-item-arrow">›</span>
+      </a>
+    </div>
+
+    <div class="mobile-menu-footer">
+      <div class="mobile-currency-row">
+        <span>Display Currency:</span>
+        <button class="currency-switcher" onclick="toggleCurrency()">$ USD / ₫ VND</button>
+      </div>
+      <div class="mobile-contact-card">
+        <div
+          style="font-size: 0.75rem; color: var(--gold-primary); text-transform: uppercase; font-weight: 600; margin-bottom: 4px;">
+          VIP Concierge (24/7)</div>
+        <a href="tel:18008888"
+          style="font-family: var(--font-serif); font-size: 1.1rem; color: var(--text-primary); font-weight: 700;">+1 (800)
+          888-8888</a>
+        <p style="font-size: 0.72rem; color: var(--text-muted); margin-top: 2px;">Private tailoring consultations & white-glove courier
+        </p>
+      </div>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       Hero Section: Editorial Haute Couture
+       ========================================================================== -->
+  <section class="hero-section">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&w=2000&q=85"
+        alt="Leo Maison European Luxury Fashion" />
+    </div>
+    <div class="hero-overlay"></div>
+
+    <div class="container hero-content">
+      <div class="hero-subtitle">Haute Couture Fall / Winter 2026</div>
+      <h1 class="hero-title">
+        The Pinnacle of <br />
+        <em>Sartorial Elegance</em>
+      </h1>
+      <p class="hero-description">
+        Each creation at Leo Maison represents the supreme synergy of Milanese tailoring mastery and the world's most
+        coveted natural fibers — pure Loro Piana cashmere and Lyon Mulberry silks.
+      </p>
+
+      <div class="hero-actions">
+        <a href="#shop" class="btn-luxury">
+          <span>Explore The Runway</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12" />
+            <polyline points="12 5 19 12 12 19" />
+          </svg>
+        </a>
+        <a href="#lookbook" class="btn-outline">
+          <span>Explore Lookbook</span>
+        </a>
+      </div>
+
+      <div class="hero-stats">
+        <div class="stat-item">
+          <h4>100%</h4>
+          <p>Italian Cashmere & Silks</p>
+        </div>
+        <div class="stat-item">
+          <h4>Handmade</h4>
+          <p>Artisanal Savile Row Cuts</p>
+        </div>
+        <div class="stat-item">
+          <h4>VIP Courier</h4>
+          <p>White-Glove Express</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Brand Pillars (4 Trust Badges)
+       ========================================================================== -->
+  <section class="pillars-section">
+    <div class="container pillars-grid">
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="1" y="3" width="15" height="13" />
+            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+            <circle cx="5.5" cy="18.5" r="2.5" />
+            <circle cx="18.5" cy="18.5" r="2.5" />
+          </svg>
+        </div>
+        <div class="pillar-info">
+          <h5>First-Class Delivery</h5>
+          <p>Complimentary over $500, signature velvet box</p>
+        </div>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+          </svg>
+        </div>
+        <div class="pillar-info">
+          <h5>European Textiles</h5>
+          <p>100% Loro Piana Super 150s & Lyon silks</p>
+        </div>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+            <line x1="1" y1="10" x2="23" y2="10" />
+          </svg>
+        </div>
+        <div class="pillar-info">
+          <h5>Global VIP Checkout</h5>
+          <p>Verified PayPal, international cards & VietQR</p>
+        </div>
+      </div>
+
+      <div class="pillar-card">
+        <div class="pillar-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67" />
+          </svg>
+        </div>
+        <div class="pillar-info">
+          <h5>Private Atelier Care</h5>
+          <p>30-day adjustments & lifetime stitch warranty</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Shop Catalog Section
+       ========================================================================== -->
+  <section class="shop-section" id="shop">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-pretitle">Haute Couture Collection</div>
+        <h2 class="section-title">Exclusive Runway & Bespoke Creations</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">
+          Inspired by the legendary fashion ateliers of Milan and Paris, our bespoke collection delivers impeccable
+          tailoring, opulent textures, and transcendent craftsmanship.
+        </p>
+      </div>
+
+      <!-- Catalog Controls & Filters -->
+      <div class="catalog-toolbar">
+        <div class="category-tabs">
+          <button class="filter-tab active" data-category="all">All Designs</button>
+          <button class="filter-tab" data-category="men">Gentlemen</button>
+          <button class="filter-tab" data-category="women">Ladies</button>
+          <button class="filter-tab" data-category="accessories">Leather & Eyewear</button>
+          <button class="filter-tab" data-category="runway">Milan Runway</button>
+          <button class="filter-tab" data-category="autumn">Fall / Winter</button>
+        </div>
+
+        <div class="toolbar-controls">
+          <span class="products-count" id="productsCount">12 Masterpieces</span>
+          <select class="sort-select" id="sortSelect" aria-label="Sort products">
+            <option value="featured">Featured Masterpieces</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+            <option value="rating">Highest Rated</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Products Grid Container -->
+      <div class="products-grid" id="productsGrid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Interactive "Shop The Look" / Lookbook Section
+       ========================================================================== -->
+  <section class="lookbook-section" id="lookbook">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-pretitle">Interactive Styling</div>
+        <h2 class="section-title">Shop The Look: Runway Elegance</h2>
+        <div class="section-divider"></div>
+        <p class="section-desc">
+          Click the glowing interactive pins on our runway muse to discover tailoring specifications and instantly add
+          complementary garments to your wardrobe.
+        </p>
+      </div>
+
+      <div class="lookbook-container" id="lookbookContainer">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       VIP Club Newsletter Section
+       ========================================================================== -->
+  <section class="vip-club-section" id="vip-club">
+    <div class="container">
+      <div class="vip-club-card">
+        <span class="gold-badge">Leo Privé Circle</span>
+        <h3 style="font-family: var(--font-serif); font-size: 2.2rem; margin: 16px 0 10px;">
+          Join The Exclusive Luxury Circle
+        </h3>
+        <p style="color: var(--text-secondary); max-width: 580px; margin: 0 auto; font-size: 0.95rem;">
+          Subscribe to receive private invitations to closed fashion weeks, preview bespoke releases, and receive a
+          <strong>$50 welcome voucher</strong> toward your inaugural order.
+        </p>
+
+        <form class="vip-club-form" id="vipClubForm">
+          <input type="email" class="vip-input" id="vipEmail" placeholder="Enter your private email address..."
+            required />
+          <button type="submit" class="btn-luxury" style="padding: 14px 28px;">
+            Request VIP Access
+          </button>
+        </form>
+        <p style="font-size: 0.75rem; color: var(--text-muted);">* We respect your complete privacy with strict confidentiality.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Footer
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="brand-logo" style="margin-bottom: 20px;">
+            <img src="assets/logo-leo-maison.png" alt="Leo Maison" class="brand-logo-img"
+              style="height: 52px; max-width: 250px;" />
+          </div>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.7; max-width: 320px;">
+            A distinguished European luxury house engineering prestigious lifestyle silhouettes through meticulous
+            sartorial cuts and bespoke client concierge services.
+          </p>
+          <div class="footer-payment-badges">
+            <span class="payment-badge">PAYPAL</span>
+            <span class="payment-badge">VISA</span>
+            <span class="payment-badge">MASTERCARD</span>
+            <span class="payment-badge">VIETQR</span>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h5>Flagship Boutiques</h5>
+          <ul class="footer-links">
+            <li><a href="#">Via Montenapoleone, Milan (Italy)</a></li>
+            <li><a href="#">Faubourg Saint-Honoré, Paris (France)</a></li>
+            <li><a href="#">Savile Row, Mayfair, London (UK)</a></li>
+            <li><a href="#">740 Park Avenue, New York, NY (USA)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Client Concierge</h5>
+          <ul class="footer-links">
+            <li><a href="javascript:showToast('VIP Concierge Hotline: +1 (800) 888-8888 (24/7)')">Bespoke Tailoring Appointments</a></li>
+            <li><a href="javascript:showToast('White-glove private courier dispatch within 2 hours.')">White-Glove Private Courier</a></li>
+            <li><a href="javascript:showToast('Complimentary 30-day returns on unworn items with seals intact.')">30-Day Privilege Return</a></li>
+            <li><a href="javascript:showToast('Lifetime stitching & craftsmanship guarantee at Leo Maison.')">Lifetime Atelier Warranty</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5>Private Inquiries</h5>
+          <ul class="footer-links">
+            <li><a href="tel:18008888">Hotline: +1 (800) 888-8888</a></li>
+            <li><a href="mailto:concierge@leostore.fashion">concierge@leostore.fashion</a></li>
+            <li><a href="#">Monday – Sunday (9:00 AM – 10:00 PM EST)</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Leo Maison Fashion House. All Rights Reserved. Crafted for discerning connoisseurs.</p>
+        <p>PCI-DSS Level 1 Secure Architecture & International PayPal Verified Merchant</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==========================================================================
+       Off-Canvas Cart Drawer
+       ========================================================================== -->
+  <div class="drawer-backdrop" id="cartBackdrop" onclick="closeCartDrawer()"></div>
+  <aside class="cart-drawer" id="cartDrawer" aria-label="Shopping Bag">
+    <div class="drawer-header">
+      <h3 class="drawer-title">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <path d="M16 10a4 4 0 0 1-8 0" />
+        </svg>
+        Your Shopping Bag
+      </h3>
+      <button class="drawer-close-btn" onclick="closeCartDrawer()" aria-label="Close Shopping Bag">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <line x1="18" y1="6" x2="6" y2="18" />
+          <line x1="6" y1="6" x2="18" y2="18" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Free shipping progress bar -->
+    <div class="shipping-progress-box">
+      <div class="shipping-progress-text" id="shippingProgressText">
+        Calculating complimentary white-glove shipping...
+      </div>
+      <div class="shipping-bar">
+        <div class="shipping-bar-fill" id="shippingBarFill"></div>
+      </div>
+    </div>
+
+    <!-- Cart items list -->
+    <div class="cart-items-list" id="cartItemsList">
+      <!-- Injected by app.js -->
+    </div>
+
+    <!-- Cart Footer & Totals -->
+    <div class="drawer-footer">
+      <div class="coupon-input-group">
+        <input type="text" class="coupon-input" id="couponInput" placeholder="PROMO CODE (e.g. LEOVIP10)" />
+        <button class="btn-apply-coupon" onclick="applyCouponCode()">Apply</button>
+      </div>
+
+      <div class="cart-totals">
+        <div class="total-row">
+          <span>Subtotal</span>
+          <span id="cartSubtotal">$0</span>
+        </div>
+        <div class="total-row" id="cartDiscountRow" style="display: none; color: var(--gold-hover);">
+          <span>Privé Discount</span>
+          <span id="cartDiscount">-$0</span>
+        </div>
+        <div class="total-row">
+          <span>White-Glove Shipping</span>
+          <span id="cartShipping">Complimentary</span>
+        </div>
+        <div class="total-row final">
+          <span>Total</span>
+          <span class="total-amount" id="cartFinalTotal">$0</span>
+        </div>
+      </div>
+
+      <button class="btn-luxury btn-checkout-fast" onclick="openCheckoutModal()">
+        <span>Proceed to 1-Step Checkout</span>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+          <polyline points="9 18 15 12 9 6" />
+        </svg>
+      </button>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+       Instant Checkout Modal (PayPal, VISA/Mastercard, VietQR, COD)
+       ========================================================================== -->
+  <div class="modal-backdrop" id="checkoutModal">
+    <div class="checkout-modal-container">
+      <div class="checkout-modal-header">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="1" y="4" width="22" height="16" rx="2" ry="2" />
+            <line x1="1" y1="10" x2="23" y2="10" />
+          </svg>
+          <h3 style="font-family: var(--font-serif); font-size: 1.35rem;">Secure Luxury Checkout</h3>
+        </div>
+        <button class="drawer-close-btn" onclick="closeCheckoutModal()" aria-label="Close">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="checkout-modal-body">
+        <!-- Form Left Column -->
+        <div class="checkout-form-col">
+          <h4 class="form-group-title">
+            <span>1. Private Client Delivery Details</span>
+          </h4>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="custName">Full Name *</label>
+              <input type="text" id="custName" placeholder="e.g. Alexander Montgomery" value="Alexander Montgomery"
+                required />
+            </div>
+            <div class="form-field">
+              <label for="custPhone">Phone Number *</label>
+              <input type="tel" id="custPhone" placeholder="+1 (415) 889-7721" value="+1 (415) 889-7721" required />
+            </div>
+          </div>
+
+          <div class="form-field">
+            <label for="custEmail">Email Address (for VIP receipt & tracking) *</label>
+            <input type="email" id="custEmail" placeholder="vip@leostore.com" value="vip@leostore.com" required />
+          </div>
+
+          <div class="form-field">
+            <label for="custAddress">Delivery Address *</label>
+            <input type="text" id="custAddress" placeholder="Suite, Penthouse, Street, City, State, ZIP..."
+              value="1800 Pacific Heights Blvd, San Francisco, CA 94109" required />
+          </div>
+
+          <div class="form-field">
+            <label for="custNotes">Private Delivery Instructions</label>
+            <input type="text" id="custNotes" placeholder="e.g. Leave with private doorman concierge"
+              value="White-glove private delivery requested with signature" />
+          </div>
+
+          <h4 class="form-group-title" style="margin-top: 24px;">
+            <span>2. Payment Method</span>
+          </h4>
+
+          <!-- Payment Options Selection -->
+          <div class="payment-methods-grid">
+            <!-- VISA / Mastercard -->
+            <label class="payment-method-card active" id="methodCard_visa" onclick="switchPaymentMethod('visa')">
+              <input type="radio" name="payment_method" value="visa" checked />
+              <div class="payment-method-label">
+                <span>💳 Credit / Debit Card</span>
+              </div>
+            </label>
+
+            <!-- PayPal -->
+            <label class="payment-method-card" id="methodCard_paypal" onclick="switchPaymentMethod('paypal')">
+              <input type="radio" name="payment_method" value="paypal" />
+              <div class="payment-method-label">
+                <span>🅿️ PayPal Express</span>
+              </div>
+            </label>
+
+            <!-- VietQR / Wire Transfer -->
+            <label class="payment-method-card" id="methodCard_vietqr" onclick="switchPaymentMethod('vietqr')">
+              <input type="radio" name="payment_method" value="vietqr" />
+              <div class="payment-method-label">
+                <span>📲 Wire / VietQR</span>
+              </div>
+            </label>
+
+            <!-- COD -->
+            <label class="payment-method-card" id="methodCard_cod" onclick="switchPaymentMethod('cod')">
+              <input type="radio" name="payment_method" value="cod" />
+              <div class="payment-method-label">
+                <span>📦 White-Glove COD</span>
+              </div>
+            </label>
+          </div>
+
+          <!-- Dynamic Payment Sub-views -->
+
+          <!-- 1. VISA / Mastercard Interactive Form -->
+          <div id="visaCardForm">
+            <div class="card-visual-wrapper">
+              <div class="luxury-credit-card">
+                <div class="card-top">
+                  <div class="chip-icon"></div>
+                  <div class="card-brand-logo" id="cardDisplayBrand">VISA</div>
+                </div>
+                <div class="card-number-display" id="cardDisplayNumber">
+                  4242 •••• •••• 4242
+                </div>
+                <div class="card-bottom">
+                  <div>
+                    <div style="font-size: 0.6rem; opacity: 0.7;">CARDHOLDER</div>
+                    <div class="card-holder-name" id="cardDisplayHolder">ALEXANDER MONTGOMERY</div>
+                  </div>
+                  <div>
+                    <div style="font-size: 0.6rem; opacity: 0.7;">EXPIRES</div>
+                    <div id="cardDisplayExpiry">12/28</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card Inputs -->
+            <div class="form-field">
+              <label>Card Number</label>
+              <input type="text" id="cardInputNumber" placeholder="4242 4242 4242 4242" value="4242 4242 4242 4242"
+                oninput="updateCardNumber(this)" maxlength="19" />
+            </div>
+            <div class="form-row">
+              <div class="form-field">
+                <label>Cardholder Name</label>
+                <input type="text" id="cardInputHolder" placeholder="ALEXANDER MONTGOMERY" value="ALEXANDER MONTGOMERY"
+                  oninput="updateCardHolder(this)" />
+              </div>
+              <div class="form-field">
+                <label>Expiry (MM/YY)</label>
+                <input type="text" id="cardInputExpiry" placeholder="12/28" value="12/28"
+                  oninput="updateCardExpiry(this)" maxlength="5" />
+              </div>
+              <div class="form-field">
+                <label>CVV</label>
+                <input type="password" id="cardInputCvv" placeholder="•••" value="888" maxlength="4" />
+              </div>
+            </div>
+          </div>
+
+          <!-- 2. PayPal Form -->
+          <div id="paypalForm" style="display: none;">
+            <div class="paypal-view-box">
+              <p style="font-size: 0.85rem; color: var(--text-secondary); margin-bottom: 14px;">
+                Complete your acquisition with ultimate security through your international <strong>PayPal</strong> account or linked balance.
+              </p>
+              <button type="button" class="paypal-gold-btn" onclick="processPayPalQuickPay()">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="#003087">
+                  <path
+                    d="M7.076 21.337H2.47a.641.641 0 0 1-.633-.74L4.944.901C5.004.498 5.357.2 5.767.2h6.29c3.085 0 5.405.82 6.136 2.76.626 1.66.19 3.513-1.076 4.72 1.348.513 2.15 1.705 2.008 3.557-.22 2.87-2.33 4.985-5.305 4.985H10.59a.64.64 0 0 0-.633.543l-.78 4.93a.64.64 0 0 1-.633.542h-1.468z" />
+                </svg>
+                <span>Instant Checkout with PayPal</span>
+              </button>
+              <span style="font-size: 0.72rem; color: var(--text-muted); display: block; margin-top: 10px;">
+                Direct 256-bit encrypted redirection to PayPal European Gateway
+              </span>
+            </div>
+          </div>
+
+          <!-- 3. VietQR / Wire Transfer Form -->
+          <div id="vietqrForm" style="display: none;">
+            <div class="vietqr-view-box">
+              <p style="font-size: 0.85rem; color: var(--text-secondary);">
+                Scan with any banking app or international mobile banking wire for automated order reconciliation.
+              </p>
+              <img class="qr-code-img"
+                src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=LEO-STORE-PAYMENT-VIP"
+                alt="VietQR / Wire Transfer QR" />
+              <p style="font-size: 0.78rem; color: var(--gold-hover); font-weight: 600;">
+                Beneficiary: LEO MAISON LUXURY INTERNATIONAL<br />
+                Account: 0011-0088-9999 (Vietcombank Head Office)
+              </p>
+            </div>
+          </div>
+
+          <!-- 4. COD Form -->
+          <div id="codForm" style="display: none;">
+            <div
+              style="padding: 16px; background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: 4px; margin-top: 10px;">
+              <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6;">
+                🎩 White-glove concierge fitting upon arrival. Inspect textiles, tailoring seams, and silhouette in privacy prior to payment.
+              </p>
+            </div>
+          </div>
+
+          <button type="button" class="btn-luxury" id="btnConfirmOrder"
+            style="width: 100%; margin-top: 24px; padding: 16px;" onclick="processOrderSubmit(event)">
+            Confirm Order & Complete Acquisition
+          </button>
+        </div>
+
+        <!-- Review Right Column -->
+        <div class="checkout-review-col">
+          <h4 class="form-group-title">
+            <span>Order Summary</span>
+          </h4>
+
+          <div class="review-items-mini" id="checkoutReviewItems">
+            <!-- Injected by app.js -->
+          </div>
+
+          <div class="cart-totals" style="margin-top: 20px;">
+            <div class="total-row">
+              <span>Subtotal</span>
+              <span id="checkoutReviewSubtotal">$0</span>
+            </div>
+            <div class="total-row" id="checkoutReviewDiscountRow" style="display: none; color: var(--gold-hover);">
+              <span>Privé Discount</span>
+              <span id="checkoutReviewDiscount">-$0</span>
+            </div>
+            <div class="total-row">
+              <span>White-Glove Delivery</span>
+              <span id="checkoutReviewShipping">Complimentary</span>
+            </div>
+            <div class="total-row final">
+              <span>Total Acquisition</span>
+              <span class="total-amount" id="checkoutReviewTotal">$0</span>
+            </div>
+          </div>
+
+          <div
+            style="margin-top: 24px; padding: 14px; background: rgba(197, 160, 89, 0.08); border: 1px solid var(--border-subtle); border-radius: 4px; font-size: 0.78rem; color: var(--text-secondary);">
+            🔒 <strong>Strict PCI-DSS Compliance</strong>: Your payment credentials are end-to-end tokenized and never stored on local servers.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       Order Success Modal
+       ========================================================================== -->
+  <div class="modal-backdrop" id="successModal">
+    <div class="checkout-modal-container" style="max-width: 540px;" id="successModalBody">
+      <!-- Injected by app.js -->
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       Quick View Modal
+       ========================================================================== -->
+  <div class="modal-backdrop" id="quickViewModal">
+    <div class="quickview-modal-container">
+      <div class="quickview-body" id="quickViewBody">
+        <!-- Injected by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       Wishlist Modal
+       ========================================================================== -->
+  <div class="modal-backdrop" id="wishlistModal">
+    <div class="checkout-modal-container" style="max-width: 580px;">
+      <div class="checkout-modal-header">
+        <h3 style="font-family: var(--font-serif); font-size: 1.25rem;">Your Curated Wishlist</h3>
+        <button class="drawer-close-btn" onclick="closeWishlistModal()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+      <div style="padding: 24px; max-height: 70vh; overflow-y: auto;" id="wishlistItems">
+        <!-- Injected by app.js -->
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       Live Search Overlay
+       ========================================================================== -->
+  <div class="search-overlay" id="searchOverlay">
+    <button class="drawer-close-btn" style="position: absolute; top: 24px; right: 30px;" onclick="closeSearchOverlay()">
+      <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <line x1="18" y1="6" x2="6" y2="18" />
+        <line x1="6" y1="6" x2="18" y2="18" />
+      </svg>
+    </button>
+
+    <div class="search-bar-container">
+      <input type="text" class="search-input-large" id="liveSearchInput"
+        placeholder="Search sartorial suits, cashmere coats, silk evening gowns..." oninput="handleLiveSearch(event)" />
+    </div>
+
+    <div class="search-results-grid" id="searchResultsGrid">
+      <!-- Injected by app.js -->
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       Sticky Bottom Navigation for Mobile
+       ========================================================================== -->
+  <nav class="mobile-bottom-nav" aria-label="Mobile Navigation">
+    <a href="#" class="mobile-tab active" id="tabHome">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" />
+        <polyline points="9 22 9 12 15 12 15 22" />
+      </svg>
+      <span>Home</span>
+    </a>
+
+    <a href="#shop" class="mobile-tab" id="tabShop">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <rect x="3" y="3" width="7" height="7" />
+        <rect x="14" y="3" width="7" height="7" />
+        <rect x="14" y="14" width="7" height="7" />
+        <rect x="3" y="14" width="7" height="7" />
+      </svg>
+      <span>Catalog</span>
+    </a>
+
+    <button class="mobile-tab" onclick="openSearchOverlay()" aria-label="Search">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+        <circle cx="11" cy="11" r="8" />
+        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+      </svg>
+      <span>Search</span>
+    </button>
+
+    <button class="mobile-tab" onclick="openWishlistModal()" aria-label="Wishlist">
+      <div class="mobile-tab-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path
+            d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+        </svg>
+        <span class="action-badge mobile-badge" id="mobileWishlistBadge" style="display: none;">0</span>
+      </div>
+      <span>Wishlist</span>
+    </button>
+
+    <button class="mobile-tab" onclick="openCartDrawer()" aria-label="Shopping Bag">
+      <div class="mobile-tab-icon-wrap">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+          <line x1="3" y1="6" x2="21" y2="6" />
+          <path d="M16 10a4 4 0 0 1-8 0" />
+        </svg>
+        <span class="action-badge mobile-badge" id="mobileCartBadge" style="display: none;">0</span>
+      </div>
+      <span>Bag</span>
+    </button>
+  </nav>
+
+  <!-- ==========================================================================
+       AUTH MODAL: Sign In / Registration & 1-Click Role Switcher
+       ========================================================================== -->
+  <div class="modal-backdrop" id="authModal">
+    <div class="auth-modal-container">
+      <div class="checkout-modal-header" style="padding: 16px 24px;">
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
+            <circle cx="12" cy="7" r="4" />
+          </svg>
+          <h3 style="font-family: var(--font-serif); font-size: 1.25rem;">Leo Privé Account & Access</h3>
+        </div>
+        <button class="drawer-close-btn" onclick="closeAuthModal()" aria-label="Close">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- 1-Click Demo Role Switcher Bar -->
+      <div class="auth-modal-body">
+        <div class="role-switcher-section">
+          <div class="role-switcher-title">
+            <span>⚡ Instant Demo Role Switcher</span>
+          </div>
+          <div class="role-switcher-grid">
+            <div class="role-card-btn" onclick="loginAsRole('admin')">
+              <span class="role-card-icon">👑</span>
+              <div class="role-card-info">
+                <h6>Super Admin</h6>
+                <p>Leonardo De Luca (Full Access)</p>
+              </div>
+            </div>
+            <div class="role-card-btn" onclick="loginAsRole('seller')">
+              <span class="role-card-icon">✂️</span>
+              <div class="role-card-info">
+                <h6>Atelier Partner</h6>
+                <p>Atelier Milan (Bespoke Designer)</p>
+              </div>
+            </div>
+            <div class="role-card-btn" onclick="loginAsRole('customer')">
+              <span class="role-card-icon">💎</span>
+              <div class="role-card-info">
+                <h6>VIP Customer</h6>
+                <p>Alexander Montgomery (Gold Privé)</p>
+              </div>
+            </div>
+            <div class="role-card-btn" onclick="loginAsRole('guest')">
+              <span class="role-card-icon">👤</span>
+              <div class="role-card-info">
+                <h6>Guest Patron</h6>
+                <p>Standard Private Guest</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Auth Tabs: Sign In / Register -->
+        <div class="auth-tabs" style="border-radius: 4px; overflow: hidden; margin-bottom: 20px;">
+          <button class="auth-tab-btn active" id="tabAuthLogin" onclick="switchAuthTab('login')">Sign In</button>
+          <button class="auth-tab-btn" id="tabAuthRegister" onclick="switchAuthTab('register')">Register New Member</button>
+        </div>
+
+        <!-- Sign In Form -->
+        <form id="loginForm" onsubmit="handleUserLogin(event)">
+          <div class="form-field">
+            <label for="loginEmail">Email Address</label>
+            <input type="email" id="loginEmail" placeholder="admin@leostore.com / vip@leostore.com" required />
+          </div>
+          <div class="form-field">
+            <label for="loginPassword">Password</label>
+            <input type="password" id="loginPassword" placeholder="••••••••" required />
+          </div>
+          <button type="submit" class="btn-luxury" style="width: 100%; margin-top: 10px; padding: 14px;">
+            Sign In to Account
+          </button>
+        </form>
+
+        <!-- Registration Form -->
+        <form id="registerForm" style="display: none;" onsubmit="handleUserRegister(event)">
+          <div class="form-field">
+            <label for="regName">Full Name</label>
+            <input type="text" id="regName" placeholder="e.g. Julian Sterling" required />
+          </div>
+          <div class="form-field">
+            <label for="regEmail">Email Address</label>
+            <input type="email" id="regEmail" placeholder="client@domain.com" required />
+          </div>
+          <div class="form-field">
+            <label for="regPassword">Password</label>
+            <input type="password" id="regPassword" placeholder="Minimum 6 characters" required />
+          </div>
+          <div class="form-field">
+            <label for="regRole">Account Privilege Level</label>
+            <select id="regRole"
+              style="padding: 12px; background: var(--bg-surface-elevated); border-radius: 3px; font-size: 0.85rem;">
+              <option value="customer">Leo Privé VIP Client</option>
+              <option value="seller">Partner Atelier / Designer (Seller)</option>
+            </select>
+          </div>
+          <button type="submit" class="btn-luxury" style="width: 100%; margin-top: 10px; padding: 14px;">
+            Activate New Membership
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       ADMIN CONTROL CENTER MODAL
+       ========================================================================== -->
+  <div class="modal-backdrop" id="adminDashboardModal">
+    <div class="dashboard-modal-container">
+      <div class="dashboard-header">
+        <div class="dashboard-header-title">
+          <span style="font-size: 1.6rem;">👑</span>
+          <div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+              <h3 style="margin: 0;">Leo Maison • Admin Control Center</h3>
+              <a href="/phpmyadmin/index.php?route=/database/structure&db=leostore" target="_blank" class="btn-outline"
+                 style="font-size: 0.72rem; padding: 4px 10px; text-decoration: none; border-radius: 4px; display: inline-flex; align-items: center; gap: 4px;"
+                 title="Open MySQL Database in phpMyAdmin">
+                🗄️ <span>phpMyAdmin</span>
+              </a>
+            </div>
+            <p style="font-size: 0.72rem; color: var(--gold-hover); margin-top: 4px;">
+              System Architecture: Revenue Analytics, VIP Orders, Masterpieces & MySQL Database
+            </p>
+          </div>
+        </div>
+        <button class="drawer-close-btn" onclick="closeAdminDashboard()">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="dashboard-body">
+        <!-- KPI Metrics Grid -->
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-label">Gross Revenue</div>
+            <div class="kpi-value" id="kpiTotalRevenue">$50,700</div>
+            <div class="kpi-sub">▲ +18.4% vs previous quarter</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">VIP Orders</div>
+            <div class="kpi-value" id="kpiTotalOrders">3</div>
+            <div class="kpi-sub">1 awaiting bespoke tailoring</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Cataloged Masterpieces</div>
+            <div class="kpi-value" id="kpiTotalProducts">12</div>
+            <div class="kpi-sub">Active in MySQL Database</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Privé Patrons</div>
+            <div class="kpi-value">1,420</div>
+            <div class="kpi-sub">Gold & Platinum Tiers</div>
+          </div>
+        </div>
+
+        <!-- Dashboard Sub-Tabs -->
+        <div class="dashboard-nav-tabs">
+          <button class="dash-tab-btn active" id="adminTabOrdersBtn" onclick="switchAdminTab('orders')">
+            Manage VIP Orders
+          </button>
+          <button class="dash-tab-btn" id="adminTabProductsBtn" onclick="switchAdminTab('products')">
+            Manage Design Catalog (Products)
+          </button>
+        </div>
+
+        <!-- Tab 1: Orders List -->
+        <div id="adminTabOrders">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+            <h5 style="font-size: 0.95rem; font-family: var(--font-serif);">Acquisitions & VIP Order Dispatch</h5>
+            <span style="font-size: 0.75rem; color: var(--text-muted);">Real-time MySQL sync with phpMyAdmin</span>
+          </div>
+          <div class="dash-table-wrapper">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Order Ref</th>
+                  <th>Client</th>
+                  <th>Acquisitions</th>
+                  <th>Payment</th>
+                  <th>Amount</th>
+                  <th>Status</th>
+                  <th>Dispatch Action</th>
+                </tr>
+              </thead>
+              <tbody id="adminOrdersTableBody">
+                <!-- Injected dynamically by app.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Tab 2: Products List -->
+        <div id="adminTabProducts" style="display: none;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+            <h5 style="font-size: 0.95rem; font-family: var(--font-serif);">Curated Haute Couture Collection</h5>
+            <button class="btn-luxury" style="padding: 10px 18px; font-size: 0.75rem;" onclick="openAddProductModal()">
+              + Add New Design
+            </button>
+          </div>
+          <div class="dash-table-wrapper">
+            <table class="dash-table">
+              <thead>
+                <tr>
+                  <th>Visual</th>
+                  <th>Masterpiece Title</th>
+                  <th>Category</th>
+                  <th>Price</th>
+                  <th>Stock</th>
+                  <th>Atelier Actions</th>
+                </tr>
+              </thead>
+              <tbody id="adminProductsTableBody">
+                <!-- Injected dynamically by app.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       SELLER ATELIER PORTAL MODAL
+       ========================================================================== -->
+  <div class="modal-backdrop" id="sellerDashboardModal">
+    <div class="dashboard-modal-container" style="max-width: 960px;">
+      <div class="dashboard-header">
+        <div class="dashboard-header-title">
+          <span style="font-size: 1.6rem;">✂️</span>
+          <div>
+            <h3>Atelier Partner Portal • Milan Partner</h3>
+            <p style="font-size: 0.72rem; color: #5dade2;">Bespoke Designer Collaboration & Catalog Management Channel</p>
+          </div>
+        </div>
+        <button class="drawer-close-btn" onclick="closeSellerDashboard()">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="dashboard-body">
+        <div class="kpi-grid" style="grid-template-columns: repeat(3, 1fr);">
+          <div class="kpi-card">
+            <div class="kpi-label">Atelier Revenue</div>
+            <div class="kpi-value" style="color: #5dade2;">$28,300</div>
+            <div class="kpi-sub">Atelier commission: 85%</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Published Designs</div>
+            <div class="kpi-value" id="kpiSellerProductsCount">12</div>
+            <div class="kpi-sub">Live across flagship showrooms</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">Custom Tailoring Orders</div>
+            <div class="kpi-value" style="color: var(--gold-hover);">1</div>
+            <div class="kpi-sub">Loro Piana 6-button suit</div>
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: space-between; align-items: center; margin: 24px 0 14px; gap: 10px; flex-wrap: wrap;">
+          <h5 style="font-size: 1.05rem; font-family: var(--font-serif);">Publish New Masterpiece</h5>
+          <div style="display: flex; gap: 10px;">
+            <button class="btn-outline" style="padding: 10px 18px; font-size: 0.78rem;" onclick="openLookbookEditorModal()">
+              🎯 Calibrate Lookbook Hotspots
+            </button>
+            <button class="btn-luxury" style="padding: 10px 20px; font-size: 0.78rem;" onclick="openAddProductModal()">
+              + Publish New Design
+            </button>
+          </div>
+        </div>
+
+        <div class="dash-table-wrapper">
+          <table class="dash-table">
+            <thead>
+              <tr>
+                <th>Visual</th>
+                <th>Design Name</th>
+                <th>Handcrafted Textile</th>
+                <th>Price</th>
+                <th>Status</th>
+                <th>Atelier Actions</th>
+              </tr>
+            </thead>
+            <tbody id="sellerProductsTableBody">
+              <!-- Injected by app.js -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       CUSTOMER VIP HUB MODAL
+       ========================================================================== -->
+  <div class="modal-backdrop" id="customerProfileModal">
+    <div class="dashboard-modal-container" style="max-width: 900px;">
+      <div class="dashboard-header">
+        <div class="dashboard-header-title">
+          <span style="font-size: 1.6rem;">💎</span>
+          <div>
+            <h3>Leo Privé VIP Hub • Client Profile</h3>
+            <p style="font-size: 0.72rem; color: #58d68d;">Gold Tier Privileges, Order Portfolio & Bespoke Measurement Log</p>
+          </div>
+        </div>
+        <button class="drawer-close-btn" onclick="closeCustomerProfile()">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="dashboard-body">
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 28px;">
+          <!-- VIP Privé Digital Membership Card -->
+          <div class="vip-card-visual">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div>
+                <span class="gold-badge" style="font-size: 0.65rem;">LEO PRIVÉ CLUB</span>
+                <h4 style="font-family: var(--font-serif); font-size: 1.2rem; margin-top: 6px;" id="vipCardCustName">
+                  ALEXANDER MONTGOMERY</h4>
+              </div>
+              <span style="font-size: 1.5rem;">👑</span>
+            </div>
+            <div style="margin: 14px 0;">
+              <div style="font-size: 0.68rem; color: var(--text-muted); text-transform: uppercase;">PATRON PASSCODE
+              </div>
+              <div
+                style="font-family: 'Courier New', monospace; font-size: 1.15rem; letter-spacing: 3px; color: var(--gold-hover);">
+                LEO-VIP-8899-2026
+              </div>
+            </div>
+            <div style="display: flex; justify-content: space-between; align-items: flex-end;">
+              <div>
+                <span style="font-size: 0.65rem; color: var(--text-muted);">PRIVILEGE POINTS</span>
+                <div style="font-weight: 700; color: #ffffff; font-size: 1.1rem;" id="vipCardPoints">12,500 pts</div>
+              </div>
+              <span class="role-badge role-badge-customer">GOLD PRIVÉ PATRON</span>
+            </div>
+          </div>
+
+          <!-- Bespoke Measurements Notebook -->
+          <div
+            style="padding: 20px; background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: 8px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+              <h5 style="font-family: var(--font-serif); font-size: 1rem; color: var(--gold-hover);">
+                📐 Bespoke Measurements Logbook
+              </h5>
+              <button class="btn-outline" style="padding: 4px 10px; font-size: 0.7rem;" onclick="editMeasurements()">
+                Save Measurements
+              </button>
+            </div>
+            <p style="font-size: 0.75rem; color: var(--text-muted); margin-bottom: 14px;">
+              Our Milanese and London cutters cross-reference these dimensions to calibrate garments for your bespoke silhouette.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px;">
+              <div class="form-field">
+                <label style="font-size: 0.65rem;">Chest</label>
+                <input type="text" id="measChest" value="40 in (102 cm)" style="padding: 8px; font-size: 0.8rem;" />
+              </div>
+              <div class="form-field">
+                <label style="font-size: 0.65rem;">Waist</label>
+                <input type="text" id="measWaist" value="33 in (84 cm)" style="padding: 8px; font-size: 0.8rem;" />
+              </div>
+              <div class="form-field">
+                <label style="font-size: 0.65rem;">Shoulder</label>
+                <input type="text" id="measShoulder" value="18 in (46 cm)" style="padding: 8px; font-size: 0.8rem;" />
+              </div>
+              <div class="form-field">
+                <label style="font-size: 0.65rem;">Sleeve</label>
+                <input type="text" id="measSleeve" value="25 in (63 cm)" style="padding: 8px; font-size: 0.8rem;" />
+              </div>
+              <div class="form-field">
+                <label style="font-size: 0.65rem;">Height</label>
+                <input type="text" id="measHeight" value="5'11&quot; (180 cm)" style="padding: 8px; font-size: 0.8rem;" />
+              </div>
+              <div class="form-field">
+                <label style="font-size: 0.65rem;">Weight</label>
+                <input type="text" id="measWeight" value="163 lbs (74 kg)" style="padding: 8px; font-size: 0.8rem;" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Customer Orders History -->
+        <h5 style="font-family: var(--font-serif); font-size: 1.15rem; margin-bottom: 14px;">
+          Your Acquisition Portfolio
+        </h5>
+        <div id="customerOrdersContainer">
+          <!-- Injected dynamically by app.js -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL: ADD NEW MASTERPIECE (Admin & Seller)
+       ========================================================================== -->
+  <div class="modal-backdrop" id="addProductModal">
+    <div class="auth-modal-container" style="max-width: 600px;">
+      <div class="checkout-modal-header">
+        <h3 id="productModalTitle" style="font-family: var(--font-serif); font-size: 1.25rem;">Publish New Design to Catalog</h3>
+        <button class="drawer-close-btn" onclick="closeAddProductModal()">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+      <form style="padding: 24px;" onsubmit="handleAddNewProductSubmit(event)" novalidate>
+        <div class="form-row">
+          <div class="form-field">
+            <label for="newProdName">Masterpiece Title *</label>
+            <input type="text" id="newProdName" placeholder="e.g. Milan Silk Cashmere Trench" required />
+          </div>
+          <div class="form-field">
+            <label for="newProdBadge">Badge / Highlight</label>
+            <input type="text" id="newProdBadge" placeholder="e.g. Runway Edition, Haute Couture" value="New Arrival" />
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="newProdCategory">Category *</label>
+            <select id="newProdCategory"
+              style="padding: 12px; background: var(--bg-surface-elevated); border-radius: 3px; font-size: 0.85rem;">
+              <option value="men">Gentlemen (Men)</option>
+              <option value="women">Ladies (Women)</option>
+              <option value="accessories">Leather Goods & Eyewear</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="newProdCollection">Collection</label>
+            <select id="newProdCollection"
+              style="padding: 12px; background: var(--bg-surface-elevated); border-radius: 3px; font-size: 0.85rem;">
+              <option value="runway">Milan Runway 2026</option>
+              <option value="autumn-winter">Fall / Winter Cashmere</option>
+              <option value="bespoke">Bespoke Atelier Tailoring</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-field">
+            <label for="newProdPrice">Price ($ USD) *</label>
+            <input type="number" id="newProdPrice" placeholder="e.g. 780" step="1" required />
+          </div>
+          <div class="form-field">
+            <label for="newProdStock">In Stock Quantity</label>
+            <input type="number" id="newProdStock" placeholder="e.g. 8" value="8" />
+          </div>
+        </div>
+
+        <div class="form-field">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 6px;">
+            <label style="margin: 0;">Product Gallery Images *</label>
+            <button type="button" class="btn-add-img-row" onclick="addImageUrlRow()">
+              + Add Another Image
+            </button>
+          </div>
+
+          <!-- Drag & Drop Upload Zone from Computer -->
+          <div class="image-dropzone" id="imageDropzone">
+            <input type="file" id="productFileInput" multiple accept="image/jpeg,image/png,image/webp,image/gif,image/avif" style="display: none;" onchange="handleProductFilesSelect(event)" />
+            <div class="dropzone-inner" id="dropzonePrompt" onclick="document.getElementById('productFileInput').click()">
+              <div class="dropzone-icon">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                  <polyline points="17 8 12 3 7 8" />
+                  <line x1="12" y1="3" x2="12" y2="15" />
+                </svg>
+              </div>
+              <div class="dropzone-text">
+                <span class="dropzone-main-text"><strong>Drag & drop images here</strong> or <span class="dropzone-browse">browse from computer</span></span>
+                <span class="dropzone-sub-text">PNG, JPG, WEBP, AVIF • Drop multiple photos at once</span>
+              </div>
+            </div>
+            <div id="dropzoneLoading" class="dropzone-loading" style="display: none;">
+              <span class="spinner-gold"></span>
+              <span>Uploading images from computer...</span>
+            </div>
+          </div>
+
+          <div id="productImagesList" class="product-images-list">
+            <!-- Row 1: Primary Cover Image -->
+            <div class="image-input-row">
+              <span class="img-row-tag cover-tag">Cover *</span>
+              <input type="text" class="prod-img-input" placeholder="Image URL or uploaded file path..."
+                value=""
+                oninput="updateImagePreviews()" />
+            </div>
+          </div>
+
+          <!-- Live Image Previews Gallery -->
+          <div id="newProductImagePreviews" class="image-previews-container"></div>
+
+          <div class="img-upload-hint">
+            <span>💡 Tip:</span> Add multiple photos (front, angle, styling detail) for the Quick View gallery and catalog card hover-flip effect.
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="newProdDesc">Textile & Tailoring Artistry Description</label>
+          <textarea id="newProdDesc" rows="3"
+            placeholder="100% Italian Cashmere woven in Biella, hand-stitched Milanese buttonhole..."></textarea>
+        </div>
+
+        <button type="submit" id="productModalSubmitBtn" class="btn-luxury" style="width: 100%; padding: 14px; margin-top: 10px;">
+          Publish Design to MySQL Database & Storefront
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       MODAL: LOOKBOOK HOTSPOT CALIBRATOR (Seller & Admin)
+       ========================================================================== -->
+  <div class="modal-backdrop" id="lookbookEditorModal">
+    <div class="dashboard-modal-container" style="max-width: 1080px; max-height: 92vh; display: flex; flex-direction: column;">
+      <div class="dashboard-header">
+        <div class="dashboard-header-title">
+          <span style="font-size: 1.6rem;">🎯</span>
+          <div>
+            <h3>Lookbook Hotspots Studio • Visual Calibrator</h3>
+            <p style="font-size: 0.72rem; color: var(--gold-hover);">Drag pins or click on the photo to position garment accent points</p>
+          </div>
+        </div>
+        <button class="drawer-close-btn" onclick="closeLookbookEditorModal()">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
+          </svg>
+        </button>
+      </div>
+
+      <div class="lookbook-editor-grid">
+        <!-- Left: Interactive Canvas -->
+        <div class="calibrator-canvas-col">
+          <div class="calibrator-hint-banner">
+            <span>💡 <strong>Tip:</strong> Click any pin below to select it, then <strong>click or drag anywhere on the photo</strong> to position it directly on the garment.</span>
+          </div>
+
+          <div class="calibrator-canvas" id="calibratorCanvas">
+            <img id="calibratorImg" src="" alt="Lookbook Canvas" />
+            <div id="calibratorPinsOverlay"></div>
+          </div>
+
+          <div class="calibrator-coord-status" id="calibratorCoordStatus">
+            Active: <strong id="calibratorActivePinLabel">Pin #1</strong> • Coordinates: <span id="calibratorActiveCoord">Top: 54%, Left: 32%</span>
+          </div>
+        </div>
+
+        <!-- Right: Pins Management Controls -->
+        <div class="calibrator-controls-col">
+          <div class="form-field" style="margin-bottom: 12px;">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+              <label style="margin: 0; font-weight: 700; color: var(--gold-hover);">Interactive Hotspots</label>
+              <button type="button" class="btn-outline" style="padding: 4px 10px; font-size: 0.72rem;" onclick="addNewHotspotPin()">
+                + Add Another Pin
+              </button>
+            </div>
+            <div id="hotspotPinsList" class="hotspot-pins-list">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+
+          <!-- Banner details -->
+          <div style="border-top: 1px solid var(--border-subtle); padding-top: 14px; margin-top: 10px;">
+            <div class="form-field">
+              <label for="lookbookEditTitle">Lookbook Title</label>
+              <input type="text" id="lookbookEditTitle" value="" />
+            </div>
+            <div class="form-field">
+              <label for="lookbookEditSubtitle">Lookbook Subtitle</label>
+              <input type="text" id="lookbookEditSubtitle" value="" />
+            </div>
+            <div class="form-field">
+              <label for="lookbookEditImage">Lookbook Banner Photo URL</label>
+              <input type="text" id="lookbookEditImage" value="" oninput="updateCalibratorImage(this.value)" />
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 10px; margin-top: 18px;">
+            <button type="button" class="btn-luxury" style="flex: 1; padding: 12px;" onclick="saveLookbookHotspots()">
+              Save Hotspots & Update Storefront
+            </button>
+            <button type="button" class="btn-outline" style="padding: 12px;" onclick="resetLookbookHotspotsToDefaults()">
+              Reset
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>
